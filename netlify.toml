@@ -1,0 +1,8 @@
+# Netlify (free): New site > Import from Git > ca-frontend.
+# Set the environment variable BACKEND_URL to your ca-backend URL, e.g. https://ca-backend.onrender.com
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
