@@ -5,3 +5,12 @@ playwright-report/
 *.tsbuildinfo
 .env.local
 .DS_Store
+
+# Local dev tooling (Claude Code / HyperFrames) — not part of the app
+.agents/
+.claude/
+skills-lock.json
+supabase/.temp/
+
+# HyperFrames promo-video project (large renders; keep out of the app repo)
+videos/
