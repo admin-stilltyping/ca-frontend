@@ -1,0 +1,11 @@
+# Netlify proxies the API, login and webhook paths to ca-backend on Render, so the
+# browser only ever talks to this origin and the session cookie stays first-party.
+# The host must be the real backend service; a bare ca-backend.onrender.com belongs
+# to someone else's app.
+/api/*     https://ca-backend-elp9.onrender.com/api/:splat   200
+/auth/*    https://ca-backend-elp9.onrender.com/auth/:splat  200
+/webhook   https://ca-backend-elp9.onrender.com/webhook      200
+/healthz   https://ca-backend-elp9.onrender.com/healthz      200
+
+# Everything else is the single-page app.
+/*  /index.html  200
