@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { api, ApiError } from './api';
 import Dashboard from './components/Dashboard';
 import LoginPage from './components/LoginPage';
-import { DeletionPage, PrivacyPage } from './components/LegalPages';
+import { DeletionPage, PrivacyPage, TermsPage } from './components/LegalPages';
 import type { Me } from './types';
 
 type Flash = { kind: 'error' | 'warning'; text: string } | null;
@@ -20,6 +20,7 @@ function readFlash(): Flash {
 export default function App() {
   const path = window.location.pathname;
   if (path === '/privacy') return <PrivacyPage />;
+  if (path === '/terms') return <TermsPage />;
   if (path === '/deletion') return <DeletionPage />;
   return <Home />;
 }

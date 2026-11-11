@@ -25,15 +25,19 @@ describe('logged out', () => {
     expect(await screen.findByRole('alert')).toHaveTextContent('Could not reach the server: boom');
   });
 
-  it('renders the privacy and deletion pages', () => {
+  it('renders the legal pages', () => {
     window.history.replaceState(null, '', '/deletion?code=abc123');
     const { unmount } = render(<App />);
     expect(screen.getByRole('heading', { name: 'Your data has been deleted' })).toBeInTheDocument();
     expect(screen.getByText('abc123')).toBeInTheDocument();
     unmount();
     window.history.replaceState(null, '', '/privacy');
-    render(<App />);
+    const privacy = render(<App />);
     expect(screen.getByRole('heading', { name: 'Privacy policy' })).toBeInTheDocument();
+    privacy.unmount();
+    window.history.replaceState(null, '', '/terms');
+    render(<App />);
+    expect(screen.getByRole('heading', { name: 'Terms of service' })).toBeInTheDocument();
   });
 });
 

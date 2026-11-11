@@ -30,7 +30,7 @@ export default function LoginPage() {
           Works with Instagram Business and Creator accounts. We never see your password.
         </p>
         <p className="hint">
-          <a href="/privacy">Privacy policy</a>
+          <a href="/privacy">Privacy policy</a> · <a href="/terms">Terms of service</a>
         </p>
       </div>
     </main>

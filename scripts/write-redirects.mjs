@@ -11,7 +11,10 @@ if (backend) {
   }
   rules.push(`/webhook  ${backend}/webhook  200`, `/healthz  ${backend}/healthz  200`);
 } else {
-  console.warn('BACKEND_URL not set: dist/_redirects will only contain the SPA fallback.');
+  // Vite has already copied public/_redirects into dist. Overwriting it with a bare SPA
+  // fallback would take the API proxy off the deployed site, so leave it in place.
+  console.warn('BACKEND_URL not set: keeping the committed public/_redirects.');
+  process.exit(0);
 }
 rules.push('/*  /index.html  200');
 writeFileSync(new URL('../dist/_redirects', import.meta.url), rules.join('\n') + '\n');

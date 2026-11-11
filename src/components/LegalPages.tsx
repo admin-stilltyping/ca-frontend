@@ -1,4 +1,5 @@
-// Meta App Review requires a public privacy policy URL and a data-deletion status page.
+// Meta App Review requires a public privacy policy URL, terms of service URL and a
+// data-deletion status page.
 // Edit the wording and contact address before submitting your app.
 
 export function PrivacyPage() {
@@ -46,6 +47,47 @@ export function DeletionPage() {
           Confirmation code: <code>{code}</code>
         </p>
       )}
+      <p>
+        <a href="/">Back to the app</a>
+      </p>
+    </main>
+  );
+}
+
+export function TermsPage() {
+  return (
+    <main className="doc">
+      <h1>Terms of service</h1>
+      <p>
+        These terms cover your use of Reel DM Automation, which sends an automatic direct message to people who
+        comment on your Instagram posts.
+      </p>
+      <h2>Using the service</h2>
+      <ul>
+        <li>You need an Instagram Business or Creator account that you own, or are allowed to manage.</li>
+        <li>You choose the keywords and the message, and you are responsible for what is sent in your name.</li>
+        <li>
+          Your use has to follow Instagram's own terms and platform policies. Don't send spam, scams or anything
+          misleading.
+        </li>
+      </ul>
+      <h2>What we do</h2>
+      <p>
+        We send your message once per matching comment, and keep a short activity log so you can see what happened.
+        Instagram may rate-limit or refuse a message; when it does, the activity log records the failure.
+      </p>
+      <h2>Availability</h2>
+      <p>
+        The service is provided as is, without warranty. We may change or suspend it, and we may end access that
+        breaks these terms or Instagram's policies. You can stop at any time with{' '}
+        <strong>Delete my account &amp; data</strong> in the dashboard.
+      </p>
+      <h2>Fees</h2>
+      <p>The service is free while it is in testing. If we add paid plans, we will say so before charging you.</p>
+      <h2>Contact</h2>
+      <p>
+        Questions about these terms: <a href="mailto:support@stilltyping.in">support@stilltyping.in</a>
+      </p>
       <p>
         <a href="/">Back to the app</a>
       </p>

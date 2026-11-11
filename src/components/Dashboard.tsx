@@ -168,6 +168,7 @@ export default function Dashboard({ me, onMeChange, onLoggedOut }: Props) {
 
       <footer className="footer">
         <a href="/privacy">Privacy policy</a>
+        <a href="/terms">Terms of service</a>
         <button className="link-danger" onClick={deleteAccount}>
           Delete my account &amp; data
         </button>
